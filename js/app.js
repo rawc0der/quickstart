@@ -13,13 +13,11 @@ define([
    */
   var App = {};
 
-  (function(module){
-
-    _.extend ( module, {
-      /**
-       * Application Entry point. It is called the first time DOM finishes loading
-       * @return {[function]} 
-       */
+  _.extend ( App, {
+    /**
+     * Application Entry point. It is called the first time DOM finishes loading
+     * @return {[function]} 
+     */
       initialize: function(){
 
         console.log('App::initialize', this);
@@ -35,8 +33,6 @@ define([
       CustomModule: MyModule
 
     });
-
-  })(App);
 
   return App;
 });

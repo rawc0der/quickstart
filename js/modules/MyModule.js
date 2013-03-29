@@ -7,26 +7,22 @@ define([
 	 * @type {Object}
 	 */
 	var MyModule = {};
-
-	(function(module){
 		/**
 		 * Extend the module with any utility functions from external sources
 		 */
-		_.extend( module, {
+	_.extend( MyModule, {
 
-			strAttribute: 'Custom String Data',
+		strAttribute: 'Custom String Data',
 
-			arrAttribute: [1, 2, 3, {} ],
+		arrAttribute: [1, 2, 3, {} ],
 
-			functAttribute: function(){
+		functAttribute: function(){
 
-				console.log('Module::accessing this.strAttribute ', this.strAttribute);
+			console.log('Module::accessing this.strAttribute ', this.strAttribute);
 
-			}
+		}
 
-		});
-
-	})(MyModule);	
+	});
 
 	return MyModule;
 

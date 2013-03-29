@@ -9,24 +9,20 @@ define([
 	 * @type {[Object]}
 	 */
 	var MyController = _.extend( {}, Backbone.Events );
-
-	(function(module){
+	/**
+	 * Define application logic here, by extending the Controller
+	 */
+	_.extend( MyController, {
 		/**
-		 * Define application logic here, by extending the Controller
+		 * Function called immediately after App Initialize 
 		 */
-		_.extend( module, {
-			/**
-			 * Function called immediately after App Initialize 
-			 */
-			start: function(){
+		start: function(){
 
-				console.log('Controller::Start  --> define logic');
-				
-			}
+			console.log('Controller::Start  --> define logic');
+			
+		}
 
-		});
-
-	})(MyController);
+	});
 
 	return MyController;
 
