@@ -21,8 +21,9 @@ define([
 
 			console.log('Controller::Start  --> define logic');
 			console.log( new Widget )
+
 			
-		}
+		} // end start
 
 	});
 
