@@ -11,7 +11,8 @@ require.config({
 	    controllers: 'modules/controllers',
 	    models: 'modules/models',
 	    views: 'modules/views',
-	    modules: 'modules'
+	    modules: 'modules',
+	    widget: 'modules/views/widget-0.5'
 	}
 });
 /**
