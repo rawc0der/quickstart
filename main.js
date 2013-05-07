@@ -12,7 +12,9 @@ require.config({
 	    models: 'modules/models',
 	    views: 'modules/views',
 	    modules: 'modules',
-	    widget: 'modules/views/widget-0.5'
+	    widget: 'modules/views/widget-0.5',
+	    jquerym: 'library/jquery-mobile',
+	    jqueryui: 'library/jquery-ui'
 	}
 });
 /**

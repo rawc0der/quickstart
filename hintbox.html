@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="utf-8">
+        <title>Quickstart for JS Applications</title>
+        <meta name="description" content="boilerplate build for fast javascript application module loading with requirejs">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" href="css/main.css"> -->
+        <script data-main="main" src="js/library/min/require.js"></script>
+        <style> 
+            li.over a.ui-link-inherit span ,#results_box a:hover {
+                color: black;
+                }
+
+            #results_box a {
+                text-decoration: none;
+                color: grey;
+                }
+                
+            .highlight {
+                color:black;
+                }
+
+        </style>
+         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css">
+    </head>
+    <body>
+        <!-- Add your site or application content here -->       
+        <!-- Begin: Main tweet list view -->
+<section id="HintList" data-role="page">
+    <header data-role="header" data-position="fixed"> 
+        <h3>Hintbox</h3>
+        <a href="#pageDetail" data-transition="flip" data-role="button" data-icon="gear" data-iconpos="notext" class="ui-btn-right">Options</a>   
+    </header>
+    <div id="display_wrapper" class="content" data-role="content">
+    </div>       
+    <footer data-role="footer" data-position="fixed"><h1> <i>jQuery Mobile</i></h1></footer> 
+</section>
+<!-- End: Main tweet list view -->
+
+    </body>
+</html>

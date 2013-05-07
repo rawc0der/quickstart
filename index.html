@@ -4,10 +4,80 @@
         <meta charset="utf-8">
         <title>Quickstart for JS Applications</title>
         <meta name="description" content="boilerplate build for fast javascript application module loading with requirejs">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- <link rel="stylesheet" href="css/main.css"> -->
         <script data-main="main" src="js/library/min/require.js"></script>
+         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css">
     </head>
     <body>
         <!-- Add your site or application content here -->       
+        <div id="page_wrapper"> 
+            <div data-role="page" id="page-one" data-title="Page 1">
+                <div  data-role="header">
+                <h1>Page 1 - Grid Demo</h1>
+                </div>
+                <div data-role="content">
+                    <div data-role="fieldcontain">
+                        <label for="myselect1" class="select">Choose one:</label>
+                        <select name="myselect1" id="myselect1">
+                            <option>Please choose</option>
+                                <optgroup label="Group 1">
+                                <option value="option1" disabled="true">Option 1</option>
+                                <option value="option2">Option 2</option>
+                                <option value="option3">Option 3</option>
+                            </optgroup>
+                            <optgroup label="Group 2">
+                                <option value="option1">Option 1</option>
+                                <option value="option2">Option 2</option>
+                                <option value="option3">Option 3</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <center><h4>2 rows by 2 columns grid example page</h4> </center>
+                    <div class="ui-grid-a"> 
+                        <div class="ui-block-a">
+                            <p><a data-transition="slidedown" href="#page-two">Internal Link to page 2</a></p></div>
+                        <div class="ui-block-b">
+                            <a data-role="button" rel="dialog" data-transition="pop" href="#page-two"> open dialog </a>
+                        </div>
+                    </div>
+                    <div class="ui-grid-a"> 
+                        <div class="ui-block-a">
+                            <div data-role="collapsible">
+                                <h3>Collapsible block header</h3>
+                                <p>Lorem ipsum dolor sit amet etc....</p>
+                            </div>
+                        </div>
+                        <div class="ui-block-b">
+                            <a  data-role="button" data-icon="plus" href="#"> Add bet </a>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <div data-role="footer">
+                Copyright
+                </div>
+            </div>
+
+            <div data-role="page" id="page-two" data-title="Page 2">
+                <div data-role="header">
+                <h1>Bet page demo</h1>
+                <a data-icon="arrow-l" data-role="button" data-theme="a" href="#page-one" data-direction="reverse">back</a>
+                <a data-icon="plus" id="add" data-role="button" data-theme="b" href="#">add</a>
+                </div>
+                <div data-role="content" id="betting_page">
+                
+                
+                </div>
+
+                <div data-role="footer">
+                Copyright
+                </div>
+            </div>
+
+        </div>
+
     </body>
 </html>

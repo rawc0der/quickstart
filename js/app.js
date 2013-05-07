@@ -3,9 +3,10 @@ define([
   'underscore', 
   'backbone',
   'controllers/MyController',
-  'modules/MyModule'
+  'controllers/AutocompleteController',
+  'jqueryui'
 
-], function($, _, Backbone, MyController, MyModule){
+], function($, _, Backbone, MyController, AutocompleteController, jqUI){
   /**
    * Main Application File Module
    * Store Components inside this object for global refs handles
@@ -28,9 +29,9 @@ define([
 
       },
 
-      Controller: MyController,
+      Controller: AutocompleteController,
 
-      CustomModule: MyModule
+      // CustomModule: MyModule
 
     });
 

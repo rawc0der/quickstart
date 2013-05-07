@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://jquerymobile.com/demos/1.2.1/docs/lists/index.html -->
+<html class="ui-mobile"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base href="http://jquerymobile.com/demos/1.2.1/docs/lists/index.html">--><base href=".">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery Mobile Docs - Listviews</title>
+	<link rel="stylesheet" href="http://jquerymobile.com/demos/1.2.1/css/themes/default/jquery.mobile-1.2.1.css">
+	<link rel="stylesheet" href="http://jquerymobile.com/demos/1.2.1/docs/_assets/css/jqm-docs.css">
+
+	<script src="./other_files/jquery-1.7.1.min.js"></script>
+	<script src="./other_files/jqm-docs.js"></script>
+	<script src="./other_files/jquery.mobile-1.2.1.js"></script>
+
+</head>
+<body class="ui-mobile-viewport ui-overlay-c">
+
+	<div data-role="page" class="type-interior ui-page ui-body-c" data-url="/demos/1.2.1/docs/lists/docs-lists.html" tabindex="0" style="min-height: 1045px;">
+
+		<div data-role="header" data-theme="f" class="ui-header ui-bar-f" role="banner">
+			<h1 class="ui-title" role="heading" aria-level="1">Lists</h1>
+			<a href="http://jquerymobile.com/demos/1.2.1/" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left ui-btn ui-btn-up-f ui-shadow ui-btn-corner-all ui-btn-icon-notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Home"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow">&nbsp;</span></span></a>
+			<a href="http://jquerymobile.com/demos/1.2.1/docs/nav.html" data-icon="search" data-iconpos="notext" data-rel="dialog" data-transition="fade" class="ui-btn-right ui-btn ui-btn-up-f ui-shadow ui-btn-corner-all ui-btn-icon-notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Search"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Search</span><span class="ui-icon ui-icon-search ui-icon-shadow">&nbsp;</span></span></a>
+		</div><!-- /header -->
+
+		<div data-role="content" class="ui-content" role="main">
+			<div class="content-primary">
+			<h2>Listviews</h2>
+
+			<ul data-role="controlgroup" data-type="horizontal" class="localnav ui-corner-all ui-controlgroup ui-controlgroup-horizontal"><div class="ui-controlgroup-controls">
+				<li><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/docs-lists.html" data-role="button" data-transition="fade" class="ui-btn-active ui-btn ui-corner-left ui-btn-up-c" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c"><span class="ui-btn-inner ui-corner-left"><span class="ui-btn-text">Basics</span></span></a></li>
+				<li><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-options.html" data-role="button" data-transition="fade" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Options</span></span></a></li>
+				<li><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-methods.html" data-role="button" data-transition="fade" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Methods</span></span></a></li>
+				<li><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-events.html" data-role="button" data-transition="fade" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-corner-right ui-controlgroup-last"><span class="ui-btn-inner ui-corner-right ui-controlgroup-last"><span class="ui-btn-text">Events</span></span></a></li>
+			</div></ul>
+
+			<h2>Basic linked lists</h2>
+			<p>A listview is coded as a simple unordered list containing linked list items with a <code> data-role="listview"</code> attribute. jQuery Mobile will apply all the necessary styles to transform the list into a mobile-friendly listview with right arrow indicator that fills the full width of the browser window. When you tap on the list item, the framework will trigger a click on the first link inside the list item, issue an Ajax request for the URL in the link, create the new page in the DOM, then kick off a page transition. View the <a href="http://jquerymobile.com/demos/1.2.1/docs/api/data-attributes.html" class="ui-link">data- attribute reference</a> to see all the possible attributes you can add to listviews.</p>
+			<p>Here is the HTML markup for a basic linked list.</p>
+
+<pre><code>
+&lt;ul data-role="listview"&gt;
+	&lt;li&gt;&lt;a href="acura.html"&gt;Acura&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="audi.html"&gt;Audi&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="bmw.html"&gt;BMW&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+			<a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-ul.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-right ui-btn-up-c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Basic list example</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
+
+			<p><strong>Style note on non-inset lists</strong>: all standard, non-inset lists have a -15px margin to negate the 15px of padding on the content area to make lists extend to the edges of the screen. If you add other widgets above or below a list, the negative margin may make these elements overlap so you'll need to add additional spacing in your custom CSS.</p>
+			
+			<h2>Nested lists</h2>
+			<p>By nesting child <code>ul</code> or <code>ol</code> inside list items, you can create nested lists. When a list item with a child list is clicked, the framework will show a new page populated with the title of the parent in the header and the list of child elements. These dynamic nested lists are styled with the "b" theme swatch (blue in the default theme) to indicate that you are in a secondary level of navigation. Lists can be nested multiple levels deep and all pages and linking will be automatically handled by the framework. Note that the page of each nested listview is created when the parent page loads and for each nested page the page-events will trigger. Please also note that the title of subpages will contain the text of the first element in the parent list item including its elements. So make sure to use a single element for the list item caption and put other elements like count bubbles behind that caption as shown in the demo below.</p>
+			<p>To <a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-themes.html" class="ui-link">set the swatch color</a> of the child listviews, set the <code>data-theme</code> attribute on each list inside.</p>
+			<a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-nested.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-right ui-btn-up-c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Nested list example</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
+
+			<h2>Numbered lists</h2>
+			<p>Lists can also be created from ordered lists (<code>ol</code>) which is useful when presenting items that are in a sequence such as search results or a movie queue. When the enhanced markup is applied to the listview, jQuery Mobile will try to first use CSS to add numbers to the list and, if not supported, will fall back to injecting numbers with JavaScript.</p>
+
+			<a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-ol.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-icon-right"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Numbered list example</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
+
+			<h2>Read-only lists</h2>
+			<p>Listviews can also be used to display a non-interactive list of items, usually as an inset list. This list is built from an unordered or ordered list that don't have linked list items. The framework styles the list items as buttons like the other list types (see <a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-themes.html" class="ui-link">theming lists</a>), but without a gradient on the background.</p>
+
+			<a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-readonly-inset.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-right ui-btn-up-c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Read-only list example</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
+
+			<h2>Split button lists</h2>
+			<p>In cases where there is more than one possible action per list item, a split button can be used to offer two independently clickable items — the list item and a small arrow icon in the far right. To make a split list item, simply add a second link inside the <code>li</code> and the framework will add a vertical divider line, style the link as an icon-only arrow button, and set the <code>title</code> attribute of the link to the text of the link for accessibility.</p>
+			<p>You can set the icon for the right split icon by specifying a <code>data-split-icon</code> attribute on the listview with an <a href="http://jquerymobile.com/demos/1.2.1/docs/buttons/buttons-icons.html" class="ui-link">icon name</a> you want. The default icon is "arrow-r" but can be configured with the <code>splitIcon</code> <a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-options.html" class="ui-link">listview option</a>. By adding a <code>data-icon</code> attribute to the list item, you can set individual icons for each split. The theme swatch color of the split button defaults to "b" (blue in the default theme) but can be set by specifying a swatch letter with the <code>data-split-theme</code> attribute at the listview level or for individual splits with the <code>data-theme</code> attribute at the link level.</p>
+
+			<a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-split.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-icon-right"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Split list example</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
+
+
+			<h2>List dividers</h2>
+			<p>List items can be turned into dividers to organize and group the list items. This is done by adding the <code> data-role="list-divider"</code> to any list item. These items are styled with the bar swatch "b" by default (blue in the default theme) but you can specify a theme for dividers by adding the <code>data-divider-theme</code> attribute to the list element (<code>ul</code> or <code>ol</code>) and specifying a theme swatch letter.</p>
+
+			<a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-divider.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-icon-right"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">List divider example</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
+
+
+			<h2>Autodividers</h2>
+
+			<p>A listview can be configured to automatically generate dividers for its items. This is done by adding a <code>data-autodividers="true"</code> attribute to any listview.</p>
+
+			<p>By default, the text used to create dividers is the uppercased first letter of the item's text. Alternatively you can specify divider text by setting the <code>autodividersSelector</code> option on the listview programmatically. For example, to add a custom selector to the element with <code>id="mylistview"</code>:</p>
+
+<pre><code>
+$("#mylistview").listview({
+  autodividers: true,
+
+  // the selector function is passed a &lt;li&gt; element from the listview;
+  // it should return the appropriate divider text for that &lt;li&gt;
+  // element as a string
+  autodividersSelector: function ( li ) {
+    var out = /* generate a string based on the content of li */;
+    return out;
+  }
+});
+</code></pre>
+
+			<p>Note that if you are using formatted list items that contain a floating element (for example <code>ui-li-aside</code>), this element precedes its siblings regardless of the order in your HTML markup. This results in the first character of the floating element being used as divider text. Therefore it is recommended to specify the divider text in this case.</p>
+			
+			<p>If new list items are added to the list or removed from it, the dividers are <em>not</em> automatically updated: you should call <code>refresh()</code> on the listview to redraw the autodividers.</p>
+
+			<a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-autodividers.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-right ui-btn-up-c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Autodividers example</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
+
+
+			<h2>Search filter</h2>
+			<p>jQuery Mobile provides a very easy way to filter a list with a simple client-side search feature. To make a list filterable, simply add the <code>data-filter="true"</code> attribute to the list. The framework will then append a search box above the list and add the behavior to filter out list items that don't contain the current search string as the user types. The input's placeholder text defaults to "Filter items...". To configure the placeholder text in the search input, you can either <a href="http://jquerymobile.com/demos/1.2.1/docs/api/globalconfig.html" class="ui-link">bind to the <code>mobileinit</code> event</a> and set the <code>$.mobile.listview.prototype.options.filterPlaceholder</code> option to a string of your choosing, or use the data attribute <code>data-filter-placeholder</code> on your listview. By default the search box will inherit its theme from its parent. The search box theme can be configured using the data attribute <code>data-filter-theme</code> on your listview.</p>
+
+			<a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-search.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-icon-right"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Search filter example</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
+
+      <p>If you want to change the way in which list items are filtered, i.e. fuzzy search or matching from the beginning of the string, you can configure the callback used internally by defining <code>$.mobile.listview.prototype.options.filterCallback</code> during <code>mobileinit</code> or after the widget has been created with <code>$("#mylist").listview('option', 'filterCallback', yourFilterFunction)</code>. Any function defined for the callback will be provided three arguments. First, the text of the current list item, second the value being searched for, and third the list item being filtered. A truthy value will result in a hidden list item. The default callback which filters entries without the <code>searchValue</code> as a substring is described below:
+      </p>
+
+<pre><code>function( text, searchValue, item ){
+  return text.toString().toLowerCase().indexOf( searchValue ) === -1;
+};</code></pre>
+
+			<p>To filter list items by values other than the text, add a <code>data-filtertext</code> attribute to the list item.  The value of this attribute will be passed as the first argument to the <code>filterCallback</code> function instead of the text. Alternately you can use an attribute of your choosing as defined on the list item itself.</p>
+
+			<a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-search-filtertext.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-icon-right"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Hidden data filter example</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
+
+			<h2>Text formatting &amp; counts</h2>
+			<p>The framework includes text formatting conventions for common list patterns like header/descriptions, secondary information and counts through semantic HTML markup.</p>
+
+			<ul>
+				<li>To add a count indicator to the right of the list item, wrap the number in an element with a class of <code>ui-li-count</code></li>
+				<li>To add text hierarchy, use headings to increase font emphasis and use paragraphs to reduce emphasis. </li>
+				<li>Supplemental information can be added to the right of each list item by wrapping content in an element with a class of <code>ui-li-aside</code></li>
+			</ul>
+			<a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-count.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-right ui-btn-up-c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">List with count bubbles</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
+			<a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-formatting.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-icon-right"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">List with text formatting</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
+
+			<h2>Thumbnails &amp; icons</h2>
+			<p>To add thumbnails to the left of a list item, simply add an image inside a list item as the first child element. The framework will scale the image to 80 pixels square. To use standard 16x16 pixel icons in list items, add the class of <code>ui-li-icon</code> to the image element.</p>
+			<a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-thumbnails.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-icon-right"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">List with thumbnail images</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
+		 	<a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-icons.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-icon-right"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">List with icon images</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
+
+			<h2>Inset lists</h2>
+			<p>If lists are embedded in a page with other types of content, an inset list packages the list into a block that sits inside the content area with a bit of margin and rounded corners (theme controlled). By adding the <code> data-inset="true"</code> attribute to the list (ul or ol), applies the inset appearance.</p>
+
+			<a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-inset.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-icon-right"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Inset list example</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
+
+			<h2>Calling the listview plugin</h2>
+			<p>You can directly call the listview plugin on any selector, just like any jQuery plugin:</p>
+			<code>$('#mylist').listview();</code>
+
+			<h2>Updating lists</h2>
+			<p>If you add items to a listview, you'll need to call the <code>refresh()</code> method on it to update the styles and create any nested lists that are added. For example:</p>
+			<code>$('#mylist').listview('refresh');</code>
+
+			<p>Note that the <code>refresh()</code> method only affects <strong>new nodes</strong> appended to a list. This is done for performance reasons. Any list items already enhanced will be ignored by the refresh process. This means that if you change the contents or attributes on an already enhanced list item, these won't be reflected. If you want a list item to be updated, replace it with fresh markup before calling refresh.</p>
+			
+			<p>If you initially want to hide a list item you can do this by adding a class of <strong><code>ui-screen-hidden</code></strong> to the li element. Using this class ensures the corner styling is applied correctly as well as border-bottom on the last visible item.
+			
+			
+
+
+			</p></div><!--/content-primary -->
+
+			<div class="content-secondary">
+
+				<div data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d" class="ui-collapsible ui-collapsible-inset ui-collapsible-collapsed"><h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/index.html#" class="ui-collapsible-heading-toggle ui-btn ui-btn-up-b ui-fullsize ui-btn-icon-left ui-corner-top ui-corner-bottom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-icon="plus" data-iconpos="left" data-theme="b" data-mini="false"><span class="ui-btn-inner ui-corner-top ui-corner-bottom"><span class="ui-btn-text">More in this section<span class="ui-collapsible-heading-status"> click to expand contents</span></span><span class="ui-icon ui-icon-plus ui-icon-shadow">&nbsp;</span></span></a></h3><div class="ui-collapsible-content ui-body-d ui-collapsible-content-collapsed" aria-hidden="true">
+
+						
+
+						<ul data-role="listview" data-theme="c" data-divider-theme="d" class="ui-listview">
+
+							<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-d">Listviews</li>
+							<li data-theme="a" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-a"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/docs-lists.html" class="ui-link-inherit">List basics &amp; API</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-ul.html" class="ui-link-inherit">Basic linked list</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-nested.html" class="ui-link-inherit">Nested list</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-ol.html" class="ui-link-inherit">Numbered list</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-split.html" class="ui-link-inherit">Split button list</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-divider.html" class="ui-link-inherit">List dividers</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-autodividers.html" class="ui-link-inherit">Autodividers</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-count.html" class="ui-link-inherit">Count bubble</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-thumbnails.html" class="ui-link-inherit">Thumbnails</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-icons.html" class="ui-link-inherit">Icons</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-formatting.html" class="ui-link-inherit">List formatting</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-inset.html" class="ui-link-inherit">Inset styled lists</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+						
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-search.html" class="ui-link-inherit">Search filter bar</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-search-inset.html" class="ui-link-inherit">Inset search filter bar</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-search-with-dividers.html" class="ui-link-inherit">Search filter with dividers</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-search-filtertext.html" class="ui-link-inherit">Search filter hidden data</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-readonly.html" class="ui-link-inherit">Read-only lists</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-readonly-inset.html" class="ui-link-inherit">Read-only inset lists</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-forms.html" class="ui-link-inherit">Lists with forms</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-forms-inset.html" class="ui-link-inherit">Inset lists with forms</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-collapsible.html" class="ui-link-inherit">Collapsible lists</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-performance.html" class="ui-link-inherit">List performance test</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li ui-li-last"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-themes.html" class="ui-link-inherit">Theming lists</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+
+						</ul>
+				</div></div>
+			</div>
+
+		</div><!-- /content -->
+
+		<div data-role="footer" class="footer-docs ui-footer ui-bar-c" data-theme="c" role="contentinfo">
+				<p class="jqm-version">Version 1.2.1 Final</p>
+				<p>Copyright 2010, 2013 jQuery Foundation, Inc. and other contributors</p>
+		</div>
+
+		</div><!-- /page -->
+
+		
+		
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span><h1>loading</h1></div><div data-role="page" class="type-interior ui-page ui-body-c ui-page-active" data-url="/demos/1.2.1/docs/lists/index.html" data-external-page="true" tabindex="0" style="min-height: 1045px;">
+
+		<div data-role="header" data-theme="f" class="ui-header ui-bar-f" role="banner">
+		<h1 class="ui-title" role="heading" aria-level="1">Listviews</h1>
+		<a href="http://jquerymobile.com/demos/1.2.1/" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left ui-btn ui-btn-up-f ui-shadow ui-btn-corner-all ui-btn-icon-notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Home"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow">&nbsp;</span></span></a>
+		<a href="http://jquerymobile.com/demos/1.2.1/docs/nav.html" data-icon="search" data-iconpos="notext" data-rel="dialog" data-transition="fade" class="ui-btn-right ui-btn ui-btn-up-f ui-shadow ui-btn-corner-all ui-btn-icon-notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Search"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Search</span><span class="ui-icon ui-icon-search ui-icon-shadow">&nbsp;</span></span></a>
+	</div><!-- /header -->
+
+	<div data-role="content" class="ui-content" role="main">
+		<div class="content-primary">
+			<h2>Listviews</h2>
+			<p>Lists are used for data display, navigation, result lists, and data entry so jQuery Mobile includes a wide range of list types and formatting examples to cover most common design patterns. All lists start with simple <a href="http://jquerymobile.com/demos/1.2.1/docs/lists/docs-lists.html" class="ui-link">HTML list markup</a> and include styling for <a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-readonly.html" class="ui-link">read-only</a>, <a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-all-full.html" class="ui-link">linked</a>, <a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-ol.html" class="ui-link">numbered</a>, <a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-nested.html" class="ui-link">nested</a>, <a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-collapsible.html" class="ui-link">collapsible</a> lists and more.</p>
+			<p>Listviews are full width by default but can be set to be <a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-inset.html" class="ui-link">inset styled</a>. To make development easy, there are simple ways to add a <a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-search.html" class="ui-link">search filter</a> and <a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-autodividers.html" class="ui-link">automatic dividers</a>.</p>
+      </div>
+		<!--/content-primary -->
+
+				<div class="content-secondary">
+
+					<div data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d" class="ui-collapsible ui-collapsible-inset ui-collapsible-collapsed"><h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/index.html#" class="ui-collapsible-heading-toggle ui-btn ui-btn-up-b ui-fullsize ui-btn-icon-left ui-corner-top ui-corner-bottom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-icon="plus" data-iconpos="left" data-theme="b" data-mini="false"><span class="ui-btn-inner ui-corner-top ui-corner-bottom"><span class="ui-btn-text">In this section<span class="ui-collapsible-heading-status"> click to expand contents</span></span><span class="ui-icon ui-icon-plus ui-icon-shadow">&nbsp;</span></span></a></h3><div class="ui-collapsible-content ui-body-d ui-collapsible-content-collapsed" aria-hidden="true">
+
+							
+
+							<ul data-role="listview" data-theme="c" data-dividertheme="d" class="ui-listview">
+								<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-d">Listviews</li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/docs-lists.html" class="ui-link-inherit">List basics &amp; API</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-ul.html" class="ui-link-inherit">Basic linked list</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-nested.html" class="ui-link-inherit">Nested list</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-ol.html" class="ui-link-inherit">Numbered list</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-split.html" class="ui-link-inherit">Split button list</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>	
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-divider.html" class="ui-link-inherit">List dividers</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-autodividers.html" class="ui-link-inherit">Autodividers</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-count.html" class="ui-link-inherit">Count bubble</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-thumbnails.html" class="ui-link-inherit">Thumbnails</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-icons.html" class="ui-link-inherit">Icons</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-formatting.html" class="ui-link-inherit">List formatting</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-inset.html" class="ui-link-inherit">Inset styled lists</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-search.html" class="ui-link-inherit">Search filter bar</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-search-inset.html" class="ui-link-inherit">Inset search filter bar</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-search-with-dividers.html" class="ui-link-inherit">Search filter with dividers</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-search-filtertext.html" class="ui-link-inherit">Search filter hidden data</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-readonly.html" class="ui-link-inherit">Read-only lists</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-readonly-inset.html" class="ui-link-inherit">Read-only inset lists</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-forms.html" class="ui-link-inherit">Lists with forms</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-forms-inset.html" class="ui-link-inherit">Inset lists with forms</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-collapsible.html" class="ui-link-inherit">Collapsible lists</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-performance.html" class="ui-link-inherit">List performance test</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-li-last ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/demos/1.2.1/docs/lists/lists-themes.html" class="ui-link-inherit">Theming lists</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							</ul>
+					</div></div>
+				</div>
+
+			</div><!-- /content -->
+
+			<div data-role="footer" class="footer-docs ui-footer ui-bar-c" data-theme="c" role="contentinfo">
+					<p class="jqm-version">Version 1.2.1 Final</p>
+				<p>Copyright 2010, 2013 jQuery Foundation, Inc. and other contributors</p>
+			</div>
+
+			</div></body></html>

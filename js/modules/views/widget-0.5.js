@@ -73,6 +73,14 @@ define(['underscore', 'backbone'], function(_, Backbone){
             this._subviews[idx].remove();
             this._subviews.splice(idx, 1);
         },
+
+        clearSubviews: function(){
+            var subvLen = this._subviews.length;
+            for(var i = 0; i < subvLen; i++) {
+                this._subviews[i].remove();
+            }
+            this._subviews.splice(0, subvLen);
+        },
         
         getSubview: function(idx){
             if(this._config.debug === true) console.log('%c Widget::getSubview' ,'color:#a9a', this._subviews[idx])
@@ -131,7 +139,7 @@ define(['underscore', 'backbone'], function(_, Backbone){
             }
             this.delegateEvents();
             if ( this.options && this.options.initialize ) this.options.initialize.call(this);
-            
+            return this;
         },
         
         // initModelBindings: function(){
@@ -148,7 +156,7 @@ define(['underscore', 'backbone'], function(_, Backbone){
             if(this._config.debug === true) console.log('%c Model Update', 'color:red', this.model.changed );
             var HTML = this.processTemplate(this.model.attributes);
             if(this._config.debug === true) console.log('%c Template Updated', 'color:red', HTML);
-            this.replaceContent(HTML);
+            this.replaceContentWith(HTML);
             this.renderSubviews();
             if(this._config.debug === true) console.log('%c Widget::handleModelUpdate::$el', 'color:red', this.$el);
             this.render();
@@ -167,12 +175,19 @@ define(['underscore', 'backbone'], function(_, Backbone){
             this.container =  container$el.length ? container$el : container$el.prevObject ;
             if (render === true) this.render();
         },
-        
-        replaceContent: function(HTML, delegate){
-            if (delegate === true) this.undelegateEvents();
-            this.$el.replaceWith(HTML);
-            this.setElement(HTML, true);
-            if (delegate === true) this.delegateEvents();
+        //// DEPRECATED        
+        // replaceContent: function(HTML, delegate){
+        //     if (delegate === true) this.undelegateEvents();
+        //     this.$el.replaceWith(HTML);
+        //     this.setElement(HTML, true);
+        //     if (delegate === true) this.delegateEvents();
+            
+        // },
+
+        replaceContentWith: function(data){
+            $(this.el).empty();
+            $(this.el).html( this.processTemplate( data ) );
+            this.delegateEvents();
             if(this._config.debug === true) console.log('%c Widget::replaceContent::$el', 'color:red', this.$el);
         },
         
