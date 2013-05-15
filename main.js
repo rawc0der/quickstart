@@ -12,7 +12,8 @@ require.config({
 	    models: 'modules/models',
 	    views: 'modules/views',
 	    modules: 'modules',
-	    widget: 'modules/views/widget-0.5'
+	    widget: 'modules/views/widget-0.5',
+	    transit: 'library/min/jquery.transit.min'
 	}
 });
 /**
@@ -20,8 +21,9 @@ require.config({
  */
 require([
 	'app'
+	
 
-], function(App){ 
+], function(App, tansit){ 
 	/**
 	 *  Initialize application when DOM finishes loading
 	 */

@@ -79,6 +79,14 @@ define(['underscore', 'backbone'], function(_, Backbone){
             return this._subviews[idx];
         },
         
+        clearSubviews: function(){
+            var subvLen = this._subviews.length;
+            for(var i = 0; i < subvLen; i++) {
+                this._subviews[i].remove();
+            }
+            this._subviews.splice(0, subvLen);
+        },
+        
         initTemplate: function(){
             var _template = {};
             _.extend(_template, this.options.template || this.template);
