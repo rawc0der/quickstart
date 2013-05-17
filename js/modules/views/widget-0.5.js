@@ -118,6 +118,9 @@ define(['underscore', 'backbone'], function(_, Backbone){
             this.setElement( this.processTemplate(dataObj), true );
         },
         
+        /**
+         *   !!! This version will automatically call handleModelUpdate if model update is encountered,
+         */
         initialize: function(){
             this.makeConfig();
             if(this._config.time === true) window.console.time(this.cid);
@@ -141,13 +144,6 @@ define(['underscore', 'backbone'], function(_, Backbone){
             if ( this.options && this.options.initialize ) this.options.initialize.call(this);
             
         },
-        
-        // initModelBindings: function(){
-        //     if(this.model) this.model.on('change', function(evt){
-        //         console.log('MODEL EVENT RECIEVED:',evt);
-        //         this.handleUpdate();
-        //     }, this);
-        // },
         
         /** this will trigger a rerendering of the template  with new attributes
          * args [ model.updatedAttributes  ]
@@ -175,20 +171,19 @@ define(['underscore', 'backbone'], function(_, Backbone){
             this.container =  container$el.length ? container$el : container$el.prevObject ;
             if (render === true) this.render();
         },
-        
-        replaceContent: function(HTML, delegate){
-            if (delegate === true) this.undelegateEvents();
-            this.$el.replaceWith(HTML);
-            this.setElement(HTML, true);
-            if (delegate === true) this.delegateEvents();
+
+        replaceContentWith: function(data){
+            $(this.el).empty();
+            $(this.el).html( this.processTemplate( data ) );
+            this.delegateEvents();
             if(this._config.debug === true) console.log('%c Widget::replaceContent::$el', 'color:red', this.$el);
         },
-        
+
         remove: function(){
             if(this._config.debug === true) console.log('%c Widget::remove', 'color:#a9a', this);
             this._subviews = null;
             Backbone.View.prototype.remove.call(this) // ??
-            // this.$el.remove();
+            
         }
         // handleAdd: function(){},
         // 

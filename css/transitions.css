@@ -17,6 +17,47 @@
 	    to { -webkit-transform: translateX(-100%); }
 	}
 
-#viewsContainer div {
+div.cell{
 	float: left;
+}
+
+li {
+	float: left;
+	width: 150px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a.red {
+	color: red;
+}
+a.green {
+	color: green;
+}
+a.blue {
+	color: blue;
+}
+
+li a {
+	margin: 5px;
+	text-decoration: none;
+}
+
+a img {
+  width: 90%;
+  height: auto
+}
+
+#MenuContainer {
+
+  width: 100%;
+  height:200px
+
+}
+#SubviewsContainer {
+	width: 800px;
+	height: 600px;
+
 }
